@@ -43,6 +43,8 @@ public class RatingController {
     Rating replaceRating(@RequestBody Rating newRating, @PathVariable Long ratingId) {
         return repository.findById(ratingId)
                 .map(rating -> {
+                    review.setUsername(newReview.getUsername());
+                    review.setMoviename(newReview.getMoviename());
                     rating.setRating(newRating.getRating());
                     return repository.save(rating);
                 })
