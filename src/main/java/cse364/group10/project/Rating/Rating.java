@@ -55,4 +55,5 @@ public class Rating {
 
     public void setMoviename(String moviename) {
         this.moviename = moviename;
+    }
 }
