@@ -25,7 +25,7 @@ public class MovieController {
         return repository.findAll();
     }
 
-    @PostMapping("movies")
+    @PostMapping("/movies")
     Movie newMovie(@RequestBody Movie newMovie) {
         return repository.save(newMovie);
     }
