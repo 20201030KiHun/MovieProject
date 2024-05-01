@@ -2,7 +2,6 @@ package cse364.group10.project.Movie;
 
 import java.util.List;
 import cse364.group10.project.Rating.Rating;
-import cse364.group10.project.Movie.KeywordExtract.KeyWordExtractor;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,11 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class MovieController {
     private final MovieRepository repository;
 
-    private final KeyWordExtractor extractor;
-
-    MovieController(MovieRepository repository, KeyWordExtractor extractor) {
+    MovieController(MovieRepository repository) {
         this.repository = repository;
-        this.extractor = extractor;
     }
 
     @GetMapping("/movies")
@@ -49,13 +45,6 @@ public class MovieController {
         Movie movie = repository.findById(id)
                 .orElseThrow(() -> new MovieNotFoundException(id));
         return movie.getReviewList();
-    }
-
-    @GetMapping("/movies/{id}/reviews/keywords")
-    List<String> getKeywordsFromReviews(@PathVariable Long id) {
-        Movie movie = repository.findById(id)
-                .orElseThrow(() -> new MovieNotFoundException(id));
-        return extractor.extractKeywordsFromReviews(movie.getReviewList());
     }
 
     @PutMapping("/movies/{id}")
