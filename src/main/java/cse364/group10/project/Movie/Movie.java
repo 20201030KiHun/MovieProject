@@ -15,7 +15,7 @@ public class Movie {
     private double avgRating;
     private String tumbnail;
     @OneToMany()
-    private List<Review> reviewList;
+    private List<Rating> ratingList;
 
     public Movie(String title, String genre, String discription, double avgRating, String tumbnail) {
         this.title = title;
@@ -48,7 +48,7 @@ public class Movie {
         return tumbnail;
     }
 
-    public List<Review> getReviewList() {
+    public List<Rating> getRatingList() {
         return reviewList;
     }
 
@@ -76,7 +76,7 @@ public class Movie {
         this.tumbnail = tumbnail;
     }
 
-    public void setReviewList(List<Review> reviewList) {
+    public void setRatingList(List<Rating> ratingList) {
         this.reviewList = reviewList;
     }
 }
