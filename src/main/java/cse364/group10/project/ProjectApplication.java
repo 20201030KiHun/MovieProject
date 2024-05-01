@@ -2,12 +2,13 @@ package cse364.group10.project;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
-@SpringBootApplication
-public class ProjectApplication {
+@SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
+public class DemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProjectApplication.class, args);
+		SpringApplication.run(DemoApplication.class, args);
 	}
 
 }
