@@ -49,7 +49,7 @@ public class Movie {
     }
 
     public List<Rating> getRatingList() {
-        return reviewList;
+        return ratingList;
     }
 
     public void setId(Long id) {
