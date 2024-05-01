@@ -42,7 +42,7 @@ public class RatingController {
     @PutMapping("/ratings/{ratingId}")
     Rating replaceRating(@RequestBody Rating newRating, @PathVariable Long ratingId) {
         return repository.findById(ratingId)
-                .map(r -> {
+                .map(rating -> {
                     rating.setRating(newRating.getRating());
                     return repository.save(rating);
                 })
