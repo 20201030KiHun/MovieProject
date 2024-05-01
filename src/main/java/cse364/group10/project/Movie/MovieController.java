@@ -1,7 +1,7 @@
 package cse364.group10.project.Movie;
 
 import java.util.List;
-import cse364.group10.project.Review.Review;
+import cse364.group10.project.Rating.Rating;
 import cse364.group10.project.Movie.KeywordExtract.KeyWordExtractor;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
