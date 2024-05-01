@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class MovieController {
     private final MovieRepository repository;
 
-    MovieController(MovieRepository repository) {
+    @Autowired
+    public MovieController(MovieRepository repository) {
         this.repository = repository;
     }
 
