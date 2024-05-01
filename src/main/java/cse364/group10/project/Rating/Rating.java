@@ -27,6 +27,14 @@ public class Rating {
     public double getRating() {
         return rating;
     }
+    
+    public String getUsername() {
+        return username;
+    }
+
+    public String getMoviename() {
+        return moviename;
+    }
 
 
     public void setId(Long id) {
@@ -41,4 +49,10 @@ public class Rating {
         this.rating = rating;
     }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setMoviename(String moviename) {
+        this.moviename = moviename;
 }
