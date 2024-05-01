@@ -77,6 +77,6 @@ public class Movie {
     }
 
     public void setRatingList(List<Rating> ratingList) {
-        this.reviewList = reviewList;
+        this.ratingList = ratingList;
     }
 }
