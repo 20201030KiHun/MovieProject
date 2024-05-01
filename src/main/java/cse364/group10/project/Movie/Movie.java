@@ -3,7 +3,7 @@ package cse364.group10.project.Movie;
 import java.util.Objects;
 import java.util.List;
 
-import cse364.group10.project.Review.Review;
+import cse364.group10.project.Rating.Rating;
 import jakarta.persistence.*;
 
 @Entity
