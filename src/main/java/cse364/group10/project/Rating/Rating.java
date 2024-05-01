@@ -8,6 +8,8 @@ public class Rating {
     private @Id @GeneratedValue Long id;
     @OneToOne
     private User user;
+    private String username;
+    private String moviename;
     private double rating;
 
     Rating() {}
