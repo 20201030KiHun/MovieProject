@@ -40,11 +40,11 @@ public class MovieController {
         return repository.findByGenre(genre);
     }*/
 
-    @GetMapping("/movies/{id}/reviews")
-    List<Review> getReviewsForMovie(@PathVariable Long id) {
+    @GetMapping("/movies/{id}/ratings")
+    List<Rating> getRatingsForMovie(@PathVariable Long id) {
         Movie movie = repository.findById(id)
                 .orElseThrow(() -> new MovieNotFoundException(id));
-        return movie.getReviewList();
+        return movie.getRatingList();
     }
 
     @PutMapping("/movies/{id}")
