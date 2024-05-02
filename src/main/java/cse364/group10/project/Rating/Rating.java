@@ -8,9 +8,9 @@ public class Rating {
     private @Id @GeneratedValue Long id;
     @OneToOne
     private User user;
-    private String username;
-    private String moviename;
-    private String genrename[5];
+    private String userName;
+    private String movieName;
+    private String genreName[5];
     private int genreNum;
     private double rating;
     private double ratingGenre[5];
@@ -21,44 +21,24 @@ public class Rating {
         this.rating = rating;
     }
 
-    public Long getId() {
-        return id;
-    }
+    public Long getId() { return id; }
+    public User getUser() { return user; }
+    public double getRating() { return rating; }
+    public String getUserName() { return username; }
+    public String getMovieName() { return moviename; }
+    public String getGenreName(int n) { return genreName[n - 1]; }
+    public double getRatingGenre(int n) { return ratingGenre[n - 1]; } 
 
-    public User getUser() {
-        return user;
+    public void setId(Long id) { this.id = id; }
+    public void setUser(User user) { this.user = user; }
+    public void setRating(double rating) { this.rating = rating; }
+    public void setUserName(String userName) { this.username = username; }
+    public void setMovieName(String movieName) { this.moviename = moviename; }
+    public void setGenreName(String genreName) {
+        this.genreName[this.genreNum] = genreName;
+        genreNum++;
     }
-
-    public double getRating() {
-        return rating;
-    }
-    
-    public String getUsername() {
-        return username;
-    }
-
-    public String getMoviename() {
-        return moviename;
-    }
-
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public void setRating(double rating) {
-        this.rating = rating;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setMoviename(String moviename) {
-        this.moviename = moviename;
+    public void setRatingGenre(double rating, int n) {
+        this.ratingGenre[n] = rating;
     }
 }
