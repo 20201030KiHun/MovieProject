@@ -24,8 +24,8 @@ public class Rating {
     public Long getId() { return id; }
     public User getUser() { return user; }
     public double getRating() { return rating; }
-    public String getUserName() { return username; }
-    public String getMovieName() { return moviename; }
+    public String getUserName() { return userName; }
+    public String getMovieName() { return movieName; }
     public String getGenreName(int n) { return genreName[n]; }
     public double getRatingGenre(int n) { return ratingGenre[n]; }
     public int getRatingGenreNum() { return genreNum; }
@@ -33,8 +33,8 @@ public class Rating {
     public void setId(Long id) { this.id = id; }
     public void setUser(User user) { this.user = user; }
     public void setRating(double rating) { this.rating = rating; }
-    public void setUserName(String userName) { this.username = username; }
-    public void setMovieName(String movieName) { this.moviename = moviename; }
+    public void setUserName(String userName) { this.userName = userName; }
+    public void setMovieName(String movieName) { this.movieName = movieName; }
     public void setGenreName(String genreName) {
         this.genreName[this.genreNum] = genreName;
         genreNum++;
