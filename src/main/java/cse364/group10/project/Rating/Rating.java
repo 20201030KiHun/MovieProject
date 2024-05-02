@@ -11,7 +11,7 @@ public class Rating {
     private String userName;
     private String movieName;
     private String genreName[5];
-    private int genreNum;
+    private int genreNum = 0;
     private double rating;
     private double ratingGenre[5];
 
