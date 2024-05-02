@@ -24,7 +24,7 @@ public class RatingController {
     // tag::get-aggregate-root[]
     @GetMapping("/ratings")
     List<Rating> all() {
-        return  repository.findAll();
+        return repository.findAll();
     }
     // end::get-aggregate-root[]
 
@@ -43,8 +43,8 @@ public class RatingController {
     Rating replaceRating(@RequestBody Rating newRating, @PathVariable Long ratingId) {
         return repository.findById(ratingId)
                 .map(rating -> {
-                    rating.setUsername(newRating.getUsername());
-                    rating.setMoviename(newRating.getMoviename());
+                    rating.setUserName(newRating.getUserName());
+                    rating.setMovieName(newRating.getMovieName());
                     rating.setRating(newRating.getRating());
                     return repository.save(rating);
                 })
