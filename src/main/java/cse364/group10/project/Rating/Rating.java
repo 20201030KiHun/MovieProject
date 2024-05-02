@@ -10,7 +10,7 @@ public class Rating {
     private User user;
     private String userName;
     private String movieName;
-    private String[] genreName = { NULL, NULL, NULL, NULL, NULL };
+    private String[] genreName = { "None", "None", "None", "None", "None" };
     private int genreNum = 0;
     private double rating;
     private double[] ratingGenre = { -1, -1, -1, -1, -1 };
