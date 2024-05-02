@@ -10,7 +10,10 @@ public class Rating {
     private User user;
     private String username;
     private String moviename;
+    private String genrename[5];
+    private int genreNum;
     private double rating;
+    private double ratingGenre[5];
 
     Rating() {}
 
