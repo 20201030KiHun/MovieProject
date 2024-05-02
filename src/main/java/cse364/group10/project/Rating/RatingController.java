@@ -46,7 +46,7 @@ public class RatingController {
                     rating.setUserName(newRating.getUserName());
                     rating.setMovieName(newRating.getMovieName());
                     rating.setRating(newRating.getRating());
-                    for (int i = 0; i <= newRating.getRatingGenreNum(); i++) {
+                    for (int i = 0; i < newRating.getRatingGenreNum(); i++) {
                         rating.setRatingGenre(newRating.getRatingGenre(i), i);
                     }
                     return repository.save(rating);
