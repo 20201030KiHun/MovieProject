@@ -46,9 +46,13 @@ public class RatingController {
                     rating.setUserName(newRating.getUserName());
                     rating.setMovieName(newRating.getMovieName());
                     rating.setRating(newRating.getRating());
-                    for (int i = 0; i < newRating.getRatingGenreNum(); i++) {
-                        rating.setRatingGenre(newRating.getRatingGenre(i), i);
-                    }
+                    
+                    rating.setRatingGenre(newRating.getRatingGenre(0), 0);
+                    rating.setRatingGenre(newRating.getRatingGenre(1), 1);
+                    rating.setRatingGenre(newRating.getRatingGenre(2), 2);
+                    rating.setRatingGenre(newRating.getRatingGenre(3), 3);
+                    rating.setRatingGenre(newRating.getRatingGenre(4), 4);
+                    
                     return repository.save(rating);
                 })
                 .orElseGet(() -> {
