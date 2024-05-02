@@ -36,10 +36,12 @@ public class Rating {
     public void setUserName(String userName) { this.userName = userName; }
     public void setMovieName(String movieName) { this.movieName = movieName; }
     public void setGenreName(String genreName) {
-        this.genreName[this.genreNum] = genreName;
-        genreNum++;
+        if (genreNum < 5){
+            this.genreName[this.genreNum] = genreName;
+            genreNum++;
+        }
     }
     public void setRatingGenre(double rating, int n) {
-        this.ratingGenre[n] = rating;
+        if (n < 5) this.ratingGenre[n] = rating;
     }
 }
