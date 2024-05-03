@@ -9,11 +9,11 @@ import java.util.List;
 @Component
 public class EvaluateGenre {
     public List<String> genreEvaluate(List<Rating> ratings, String genre) {
-        List<Integer> ratingsForGenre = new ArrayList<>();
+        List<Double> ratingsForGenre = new ArrayList<>();
         for (Rating rating : ratings) {
             for (int i = 0; i < rating.getRatingGenreNum(); i++){
                 if (genre == rating.getGenreName(i))
-                    List<Integer> score = rating.getRatingGenre(i);
+                    List<Double> score = rating.getRatingGenre(i);
                     ratingsForGenre.addAll(score);
             }
         }
