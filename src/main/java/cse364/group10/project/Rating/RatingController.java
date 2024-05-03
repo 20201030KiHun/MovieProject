@@ -28,20 +28,21 @@ public class RatingController {
     }
     // end::get-aggregate-root[]
     
-    @GetMapping("/ratings/{ratingId}")
-    Rating one(@PathVariable Long ratingId) {
-        return repository.findById(ratingId)
-                .orElseThrow(() -> new RatingNotFoundException(ratingId));
+    @GetMapping("/reviews/{movie}/{genre}")
+    public List<String> genreExtract(@PathVariable("movie") String movie, @PathVariable("genre") String genre) {
+        return evaluate.
     }
-
-    @GetMapping("/ratings/{movie}/{genre}")
-    Rating
 
     @PostMapping("/ratings")
     Rating newRating(@RequestBody Rating newRating) {
         return repository.save(newRating);
     }
 
+    @GetMapping("/ratings/{ratingId}")
+    Rating one(@PathVariable Long ratingId) {
+        return repository.findById(ratingId)
+                .orElseThrow(() -> new RatingNotFoundException(ratingId));
+    }
 
     @PutMapping("/ratings/{ratingId}")
     Rating replaceRating(@RequestBody Rating newRating, @PathVariable Long ratingId) {
