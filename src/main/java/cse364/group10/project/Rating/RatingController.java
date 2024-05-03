@@ -30,8 +30,12 @@ public class RatingController {
     }
     
     @GetMapping("/reviews/{movie}/{genre}")
-    public List<Integer> genreExtract(@RequestParam("movie") String movieName, @PathVariable("genre") String genre) {
+    public List<Integer> genreEvaluate(@RequestParam("movie") String movieName, @PathVariable("genre") String genre) {
         return evaluate.findGenreRatings(repository.findByMovieName(movieName), genre);
+    }
+    @GetMapping("/reviews/{movie}/{genre}/average")
+    public List<Integer> genreEvaluateAvg(@RequestParam("movie") String movieName, @PathVariable("genre") String genre) {
+        return evaluate.gen(evaluate.findGenreRatings(repository.findByMovieName(movieName), genre));
     }
 
     @PostMapping("/ratings")
