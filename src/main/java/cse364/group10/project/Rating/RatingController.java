@@ -17,9 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/movies/{id}")
 public class RatingController {
     private final RatingRepository repository;
+    private final EvaluateGenre evaluate;
 
-    RatingController(RatingRepository repository) {
+    RatingController(RatingRepository repository, EvaluateGenre evaluate) {
         this.repository = repository;
+        this.evaluate = evaluate
     }
 
     @GetMapping("/ratings")
