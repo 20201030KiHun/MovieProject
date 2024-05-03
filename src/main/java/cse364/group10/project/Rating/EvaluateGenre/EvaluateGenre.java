@@ -11,12 +11,12 @@ import java.util.regex.Pattern;
 @Component
 public class EvaluateGenre {
     public List<String> genreEvaluate(List<Rating> ratings, String genre) {
-        List<Integer> ratingGenre = new ArrayList<>();
+        List<Integer> ratingsForGenre = new ArrayList<>();
         for (Rating rating : ratings) {
             List<Integer> score = rating.get;
-            ratingGenre.addAll(score);
+            ratingsForGenre.addAll(score);
         }
 
-        return keywords;
+        return ratingsForGenre;
     }
 }
