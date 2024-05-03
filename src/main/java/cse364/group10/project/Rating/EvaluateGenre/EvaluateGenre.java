@@ -20,4 +20,15 @@ public class EvaluateGenre {
 
         return ratingsForGenre;
     }
+
+    public double genreRatingAvg(List<Double> ratings) {
+        double sum = 0;
+        int i = 0;
+        for (double rating: ratings){
+            sum += rating;
+            i++;
+        }
+        
+        return sum / i;
+    }
 }
