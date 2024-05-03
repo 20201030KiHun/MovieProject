@@ -13,8 +13,8 @@ class RatingLoadDatabase {
     @Bean
     CommandLineRunner initDatabase(RatingRepository repository) {
         return args -> {
-            log.info("Preloading " + repository.save(new Rating("Ace", "The FirstMovie", 3.4, "This is so funny.")));
-            log.info("Preloading " + repository.save(new Rating("Bill", "ABC", 2.1, "This is so funny.")));
+            log.info("Preloading " + repository.save(new Rating("Ace", "The FirstMovie", 3.4, 5, 6, -1, -1, -1)));
+            log.info("Preloading " + repository.save(new Rating("Bill", "ABC", 2.1, 2, 3, 8, -1, -1)));
         };
     }
 }
