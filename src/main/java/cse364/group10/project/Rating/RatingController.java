@@ -27,17 +27,21 @@ public class RatingController {
         return repository.findAll();
     }
     // end::get-aggregate-root[]
+    
+    @GetMapping("/ratings/{ratingId}")
+    Rating one(@PathVariable Long ratingId) {
+        return repository.findById(ratingId)
+                .orElseThrow(() -> new RatingNotFoundException(ratingId));
+    }
+
+    @GetMapping("/ratings/{movie}/{genre}")
+    Rating
 
     @PostMapping("/ratings")
     Rating newRating(@RequestBody Rating newRating) {
         return repository.save(newRating);
     }
 
-    @GetMapping("/ratings/{ratingId}")
-    Rating one(@PathVariable Long ratingId) {
-        return repository.findById(ratingId)
-                .orElseThrow(() -> new RatingNotFoundException(ratingId));
-    }
 
     @PutMapping("/ratings/{ratingId}")
     Rating replaceRating(@RequestBody Rating newRating, @PathVariable Long ratingId) {
