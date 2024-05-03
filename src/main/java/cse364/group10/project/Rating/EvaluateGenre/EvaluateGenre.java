@@ -11,8 +11,11 @@ public class EvaluateGenre {
     public List<String> genreEvaluate(List<Rating> ratings, String genre) {
         List<Integer> ratingsForGenre = new ArrayList<>();
         for (Rating rating : ratings) {
-            List<Integer> score = rating.get;
-            ratingsForGenre.addAll(score);
+            for (int i = 0; i < rating.getGenreNum; i++){
+                if (genre == rating.getGenreName(i))
+                    List<Integer> score = rating.get;
+                    ratingsForGenre.addAll(score);
+            }
         }
 
         return ratingsForGenre;
