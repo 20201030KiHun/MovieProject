@@ -28,11 +28,15 @@ public class RatingController {
     List<Rating> all() {
         return repository.findAll();
     }
+    
+    public List<Integer> getRatingForMovie(@RequestParam("movieName") String movieName) {
+        return repository.findByMovieName(movieName);
+    }
     // end::get-aggregate-root[]
     
     @GetMapping("/reviews/{movie}/{genre}")
-    public List<String> genreExtract(@PathVariable("movie") String movie, @PathVariable("genre") String genre) {
-        return evaluate.
+    public List<Integer> genreExtract(@PathVariable("movie") String movie, @PathVariable("genre") String genre) {
+        return evaluate.findGenreRatings(
     }
 
     @PostMapping("/ratings")
