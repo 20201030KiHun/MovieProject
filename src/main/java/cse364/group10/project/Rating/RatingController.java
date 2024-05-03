@@ -36,7 +36,7 @@ public class RatingController {
     
     @GetMapping("/reviews/{movie}/{genre}")
     public List<Integer> genreExtract(@PathVariable("movie") String movie, @PathVariable("genre") String genre) {
-        return evaluate.findGenreRatings(
+        return evaluate.findGenreRatings(repository.findByMovie(movie), genre);
     }
 
     @PostMapping("/ratings")
