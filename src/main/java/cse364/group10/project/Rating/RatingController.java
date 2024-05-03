@@ -35,7 +35,7 @@ public class RatingController {
     }
     @GetMapping("/reviews/{movie}/{genre}/average")
     public List<Integer> genreEvaluateAvg(@RequestParam("movie") String movieName, @PathVariable("genre") String genre) {
-        return evaluate.gen(evaluate.findGenreRatings(repository.findByMovieName(movieName), genre));
+        return evaluate.genreRatingAvg(evaluate.findGenreRatings(repository.findByMovieName(movieName), genre));
     }
 
     @PostMapping("/ratings")
