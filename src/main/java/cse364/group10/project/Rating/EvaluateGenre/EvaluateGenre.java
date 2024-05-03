@@ -13,7 +13,7 @@ public class EvaluateGenre {
         for (Rating rating : ratings) {
             for (int i = 0; i < rating.getRatingGenreNum(); i++){
                 if (genre == rating.getGenreName(i))
-                    List<Integer> score = rating.get;
+                    List<Integer> score = rating.getRatingGenre(i);
                     ratingsForGenre.addAll(score);
             }
         }
